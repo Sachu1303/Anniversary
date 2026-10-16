@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Love Story ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family: "Segoe UI", sans-serif;
+    background:linear-gradient(135deg,#ffe4ec,#ffd1dc,#fff0f5);
+    color:#6b1834;
+}
+
+/* FIRST PAGE */
+.home{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+}
+
+.question-box{
+    width:100%;
+    max-width:500px;
+    padding:45px 25px;
+    background:rgba(255,255,255,.55);
+    border-radius:30px;
+    box-shadow:0 10px 40px rgba(150,40,80,.18);
+    backdrop-filter:blur(10px);
+}
+
+.heart{
+    font-size:75px;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    50%{transform:scale(1.15);}
+}
+
+h1{
+    font-size:38px;
+    margin:20px 0 10px;
+}
+
+.question{
+    font-size:22px;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    position:relative;
+    height:65px;
+}
+
+button{
+    border:0;
+    padding:15px 32px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.yes{
+    background:#e91e63;
+    color:white;
+    box-shadow:0 5px 15px rgba(233,30,99,.3);
+}
+
+.yes:hover{
+    transform:scale(1.08);
+}
+
+.no{
+    background:white;
+    color:#e91e63;
+    position:absolute;
+}
+
+/* SECOND PAGE */
+.anniversary{
+    display:none;
+    min-height:100vh;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    padding:30px 20px;
+}
+
+.content{
+    position:relative;
+    z-index:5;
+    max-width:600px;
+    margin:auto;
+}
+
+.small{
+    font-size:18px;
+    margin-top:15px;
+}
+
+.anniversary h2{
+    font-size:42px;
+    margin:12px 0;
+    animation:fadeDown 1.5s ease;
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.photo{
+    width:260px;
+    height:320px;
+    object-fit:cover;
+    border:10px solid white;
+    padding:5px;
+    background:white;
+    border-radius:8px;
+    box-shadow:0 12px 35px rgba(80,20,40,.25);
+    transform:rotate(-3deg);
+    margin:25px auto;
+}
+
+.message{
+    background:rgba(255,255,255,.65);
+    padding:20px;
+    border-radius:22px;
+    line-height:1.7;
+    font-size:17px;
+}
+
+/* FLOATING HEARTS */
+.love{
+    position:absolute;
+    bottom:-50px;
+    font-size:25px;
+    animation:floatUp linear forwards;
+    opacity:.8;
+    z-index:1;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    15%{opacity:1;}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* MUSIC BUTTON */
+.music-btn{
+    margin-top:20px;
+    background:#e91e63;
+    color:white;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    h1{
+        font-size:30px;
+    }
+
+    .question{
+        font-size:19px;
+    }
+
+    .anniversary h2{
+        font-size:31px;
+    }
+
+    .photo{
+        width:220px;
+        height:270px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIRST HOME PAGE -->
+
+<section class="home" id="home">
+
+    <div class="question-box">
+
+        <div class="heart">❤️</div>
+
+        <h1>Hey My Love...</h1>
+
+        <p class="question">
+            Do you still love me? 🥺❤️
+        </p>
+
+        <div class="buttons">
+
+            <button class="yes" onclick="showLove()">
+                YES ❤️
+            </button>
+
+            <button class="no" id="noBtn">
+                NO 😜
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ANNIVERSARY PAGE -->
+
+<section class="anniversary" id="anniversary">
+
+    <div class="content">
+
+        <div style="font-size:55px;">💖✨💗</div>
+
+        <p class="small">
+            You clicked YES... I knew it! 🥹❤️
+        </p>
+
+        <h2>
+            Happy 2nd Anniversary<br>
+            My Love ❤️
+        </h2>
+
+        <!-- CHANGE THIS PHOTO -->
+        <img src="images/our-photo.jpg" class="photo" alt="Our Photo">
+
+        <div class="message">
+
+            <p>
+                Two years of us... 🥹❤️
+            </p>
+
+            <br>
+
+            <p>
+                Two years filled with love, laughter,
+                silly fights, beautiful memories,
+                and countless little moments
+                that became special just because
+                I had you beside me.
+            </p>
+
+            <br>
+
+            <p>
+                You are one of the most beautiful
+                parts of my life. I don't know what
+                the future has planned for us,
+                but I know one thing...
+            </p>
+
+            <br>
+
+            <p>
+                <b>I want more of YOU. ❤️</b>
+            </p>
+
+            <br>
+
+            <p>
+                Happy Anniversary, my favourite person.
+                Here's to our story,
+                our memories,
+                and everything that's still waiting for us. 💕
+            </p>
+
+        </div>
+
+        <!-- MUSIC -->
+        <audio id="music" loop>
+            <source src="music/our-song.mp3" type="audio/mpeg">
+        </audio>
+
+        <button class="music-btn" onclick="toggleMusic()">
+            🎵 Play Our Song
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* NO BUTTON RUNS AWAY */
+
+const noBtn = document.getElementById("noBtn");
+
+function moveNoButton(){
+
+    const box = document.querySelector(".question-box");
+    const boxRect = box.getBoundingClientRect();
+
+    const maxX = boxRect.width - noBtn.offsetWidth - 20;
+    const maxY = 100;
+
+    const x = Math.random() * maxX - (maxX / 2);
+    const y = Math.random() * maxY - 20;
+
+    noBtn.style.transform =
+        `translate(${x}px, ${y}px)`;
+}
+
+noBtn.addEventListener("mouseenter", moveNoButton);
+noBtn.addEventListener("touchstart", function(e){
+    e.preventDefault();
+    moveNoButton();
+});
+
+
+/* YES CLICK */
+
+function showLove(){
+
+    document.getElementById("home").style.display = "none";
+
+    document.getElementById("anniversary").style.display = "block";
+
+    document.body.style.overflow = "hidden";
+
+    createHearts();
+
+    const music = document.getElementById("music");
+
+    music.play().catch(() => {
+        console.log("Music needs user interaction.");
+    });
+}
+
+
+/* FLOATING LOVE SYMBOLS */
+
+function createHearts(){
+
+    const symbols = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "💝",
+        "💓",
+        "✨",
+        "🥰",
+        "🌸"
+    ];
+
+    setInterval(function(){
+
+        const heart = document.createElement("div");
+
+        heart.className = "love";
+
+        heart.innerHTML =
+            symbols[Math.floor(Math.random()*symbols.length)];
+
+        heart.style.left =
+            Math.random()*100 + "vw";
+
+        heart.style.fontSize =
+            (18 + Math.random()*30) + "px";
+
+        heart.style.animationDuration =
+            (4 + Math.random()*5) + "s";
+
+        document.getElementById("anniversary")
+            .appendChild(heart);
+
+        setTimeout(function(){
+            heart.remove();
+        },9000);
+
+    },350);
+}
+
+
+/* MUSIC */
+
+function toggleMusic(){
+
+    const music = document.getElementById("music");
+    const btn = document.querySelector(".music-btn");
+
+    if(music.paused){
+        music.play();
+        btn.innerHTML = "⏸️ Pause Our Song";
+    }else{
+        music.pause();
+        btn.innerHTML = "🎵 Play Our Song";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
