@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Love Story ❤️</title>
+<title>Our 2nd Anniversary ❤️</title>
 
 <style>
 *{
@@ -13,44 +13,51 @@
     box-sizing:border-box;
 }
 
-body{
-    min-height:100vh;
-    overflow:hidden;
-    font-family: "Segoe UI", sans-serif;
-    background:linear-gradient(135deg,#ffe4ec,#ffd1dc,#fff0f5);
-    color:#6b1834;
+html{
+    scroll-behavior:smooth;
 }
 
-/* FIRST PAGE */
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:"Segoe UI",sans-serif;
+    background:linear-gradient(135deg,#ffdce7,#ffeef3,#ffd0df);
+    color:#741735;
+}
+
+/* HOME */
+
 .home{
     min-height:100vh;
     display:flex;
-    justify-content:center;
     align-items:center;
-    text-align:center;
+    justify-content:center;
     padding:25px;
+    text-align:center;
 }
 
 .question-box{
     width:100%;
     max-width:500px;
     padding:45px 25px;
-    background:rgba(255,255,255,.55);
+    background:rgba(255,255,255,.65);
     border-radius:30px;
-    box-shadow:0 10px 40px rgba(150,40,80,.18);
+    box-shadow:0 15px 50px rgba(100,20,50,.15);
     backdrop-filter:blur(10px);
 }
 
-.heart{
+.big-heart{
     font-size:75px;
     animation:beat 1s infinite;
 }
 
 @keyframes beat{
-    50%{transform:scale(1.15);}
+    50%{
+        transform:scale(1.15);
+    }
 }
 
-h1{
+.question-box h1{
     font-size:38px;
     margin:20px 0 10px;
 }
@@ -61,27 +68,27 @@ h1{
 }
 
 .buttons{
+    height:70px;
+    position:relative;
     display:flex;
     justify-content:center;
+    align-items:center;
     gap:25px;
-    position:relative;
-    height:65px;
 }
 
 button{
-    border:0;
-    padding:15px 32px;
+    border:none;
     border-radius:50px;
+    padding:15px 32px;
     font-size:18px;
     font-weight:bold;
     cursor:pointer;
-    transition:.3s;
 }
 
 .yes{
     background:#e91e63;
     color:white;
-    box-shadow:0 5px 15px rgba(233,30,99,.3);
+    box-shadow:0 8px 20px rgba(233,30,99,.3);
 }
 
 .yes:hover{
@@ -94,99 +101,189 @@ button{
     position:absolute;
 }
 
-/* SECOND PAGE */
+/* ANNIVERSARY */
+
 .anniversary{
     display:none;
     min-height:100vh;
-    text-align:center;
     position:relative;
-    overflow:hidden;
-    overflow-y:auto;
-    padding:30px 20px;
+    text-align:center;
+    padding:35px 20px 100px;
 }
 
-.content{
+.container{
     position:relative;
-    z-index:5;
-    max-width:600px;
+    z-index:10;
+    max-width:650px;
     margin:auto;
 }
 
-.small{
-    font-size:18px;
-    margin-top:15px;
+.top-love{
+    font-size:55px;
+    margin-bottom:15px;
 }
 
-.anniversary h2{
-    font-size:42px;
-    margin:12px 0;
-    animation:fadeDown 1.5s ease;
+.subtitle{
+    font-size:19px;
 }
 
-@keyframes fadeDown{
-    from{
-        opacity:0;
-        transform:translateY(-30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.title{
+    font-size:46px;
+    margin:15px 0;
+    line-height:1.15;
 }
 
-.photo{
-    width:260px;
-    height:320px;
-    object-fit:cover;
-    border:10px solid white;
-    padding:5px;
+/* PHOTO */
+
+.photo-frame{
+    margin:30px auto;
+    width:280px;
+    padding:10px 10px 35px;
     background:white;
     border-radius:8px;
-    box-shadow:0 12px 35px rgba(80,20,40,.25);
+    box-shadow:0 15px 40px rgba(80,20,40,.25);
     transform:rotate(-3deg);
-    margin:25px auto;
+    animation:photoIn 1.5s ease;
 }
 
-.message{
-    background:rgba(255,255,255,.65);
-    padding:20px;
-    border-radius:22px;
-    line-height:1.7;
-    font-size:17px;
-}
-
-/* FLOATING HEARTS */
-.love{
-    position:absolute;
-    bottom:-50px;
-    font-size:25px;
-    animation:floatUp linear forwards;
-    opacity:.8;
-    z-index:1;
-}
-
-@keyframes floatUp{
-    0%{
-        transform:translateY(0) rotate(0deg);
+@keyframes photoIn{
+    from{
         opacity:0;
+        transform:rotate(-10deg) scale(.6);
     }
-    15%{opacity:1;}
-    100%{
-        transform:translateY(-110vh) rotate(360deg);
-        opacity:0;
+
+    to{
+        opacity:1;
+        transform:rotate(-3deg) scale(1);
     }
 }
 
-/* MUSIC BUTTON */
-.music-btn{
-    margin-top:20px;
+.photo-frame img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+    display:block;
+}
+
+.photo-caption{
+    margin-top:12px;
+    font-family:cursive;
+    font-size:20px;
+}
+
+/* MUSIC */
+
+.music{
+    margin:20px auto;
     background:#e91e63;
     color:white;
+    box-shadow:0 8px 20px rgba(233,30,99,.25);
+}
+
+/* MESSAGE */
+
+.message-card{
+    margin:35px auto;
+    padding:30px 25px;
+    background:rgba(255,255,255,.72);
+    border-radius:25px;
+    box-shadow:0 10px 35px rgba(100,20,50,.12);
+    line-height:1.8;
+    font-size:18px;
+}
+
+.message-card p{
+    margin-bottom:20px;
+}
+
+.highlight{
+    font-size:25px;
+    font-weight:bold;
+}
+
+/* FLYING LOVE */
+
+.love-word{
+    position:fixed;
+    bottom:-80px;
+    z-index:2;
+    pointer-events:none;
+    animation:flyUp linear forwards;
+    font-weight:bold;
+    text-shadow:0 3px 10px rgba(100,0,40,.15);
+}
+
+@keyframes flyUp{
+
+    0%{
+        transform:translateY(0) rotate(0deg) scale(.7);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+        translateY(-115vh)
+        rotate(360deg)
+        scale(1.3);
+        opacity:0;
+    }
+}
+
+/* SPARKLES */
+
+.sparkle{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+    z-index:1;
+    animation:sparkleFly linear forwards;
+}
+
+@keyframes sparkleFly{
+
+    0%{
+        transform:translateY(0) scale(.3);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-100vh) scale(1.2);
+        opacity:0;
+    }
+}
+
+/* FINAL */
+
+.final{
+    margin-top:80px;
+    padding:45px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.6);
+}
+
+.final h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.final p{
+    font-size:18px;
+    line-height:1.7;
 }
 
 /* MOBILE */
+
 @media(max-width:600px){
-    h1{
+
+    .question-box h1{
         font-size:30px;
     }
 
@@ -194,37 +291,58 @@ button{
         font-size:19px;
     }
 
-    .anniversary h2{
-        font-size:31px;
+    .title{
+        font-size:34px;
     }
 
-    .photo{
-        width:220px;
-        height:270px;
+    .top-love{
+        font-size:45px;
+    }
+
+    .photo-frame{
+        width:235px;
+    }
+
+    .photo-frame img{
+        height:285px;
+    }
+
+    .message-card{
+        font-size:16px;
+        padding:25px 18px;
+    }
+
+    .final h2{
+        font-size:28px;
     }
 }
 </style>
 </head>
 
+
 <body>
 
-<!-- FIRST HOME PAGE -->
+<!-- FIRST PAGE -->
 
 <section class="home" id="home">
 
     <div class="question-box">
 
-        <div class="heart">❤️</div>
+        <div class="big-heart">
+            ❤️
+        </div>
 
-        <h1>Hey My Love...</h1>
+        <h1>
+            Hey Bubbu... 🥺
+        </h1>
 
         <p class="question">
-            Do you still love me? 🥺❤️
+            Do you still love me? ❤️
         </p>
 
         <div class="buttons">
 
-            <button class="yes" onclick="showLove()">
+            <button class="yes" onclick="startLove()">
                 YES ❤️
             </button>
 
@@ -243,72 +361,131 @@ button{
 
 <section class="anniversary" id="anniversary">
 
-    <div class="content">
+    <div class="container">
 
-        <div style="font-size:55px;">💖✨💗</div>
+        <div class="top-love">
+            ❤️ ✨ 💖 ✨ 💗
+        </div>
 
-        <p class="small">
+        <p class="subtitle">
             You clicked YES... I knew it! 🥹❤️
         </p>
 
-        <h2>
+        <h1 class="title">
             Happy 2nd Anniversary<br>
             My Love ❤️
-        </h2>
+        </h1>
 
-        <!-- CHANGE THIS PHOTO -->
-        <img src="" class="photo" alt="love.jpeg">
 
-        <div class="message">
+        <!-- YOUR PHOTO -->
+
+        <div class="photo-frame">
+
+            <img src="images/love.jpeg" alt="Our Love">
+
+            <div class="photo-caption">
+                Us ❤️
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC -->
+
+        <audio id="ourMusic" loop preload="auto">
+
+            <source
+                src="music/our-song.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+        <button
+            class="music"
+            id="musicBtn"
+            onclick="musicControl()">
+
+            🎵 Play Our Song
+
+        </button>
+
+
+        <!-- LOVE MESSAGE -->
+
+        <div class="message-card">
 
             <p>
                 Two years of us... 🥹❤️
             </p>
 
-            <br>
-
             <p>
-                Two years filled with love, laughter,
-                silly fights, beautiful memories,
+                Two years filled with love,
+                laughter, silly fights,
+                beautiful memories,
                 and countless little moments
                 that became special just because
-                I had you beside me.
+                I had you beside me. 💕
             </p>
 
-            <br>
-
             <p>
-                You are one of the most beautiful
-                parts of my life. I don't know what
-                the future has planned for us,
-                but I know one thing...
+                You are not just someone I love.
+                You are my favourite person,
+                my comfort, my happiness,
+                and my favourite part of every day. 🫶
             </p>
 
-            <br>
-
             <p>
-                <b>I want more of YOU. ❤️</b>
+                I may not always say everything
+                perfectly, but I hope you always
+                know how deeply I love you.
             </p>
 
-            <br>
+            <p class="highlight">
+                I WANT MORE OF YOU. ❤️
+            </p>
 
             <p>
-                Happy Anniversary, my favourite person.
-                Here's to our story,
-                our memories,
-                and everything that's still waiting for us. 💕
+                More memories. 💕
+                More adventures. ✨
+                More silly fights. 😜
+                More laughing together. 🥰
+                More photographs. 📸
+                More anniversaries. 💖
+                More... US. ❤️
             </p>
 
         </div>
 
-        <!-- MUSIC -->
-        <audio id="music" loop>
-            <source src="until found you.mp3" type="audio/mpeg">
-        </audio>
 
-        <button class="music-btn" onclick="toggleMusic()">
-            🎵 Play Our Song
-        </button>
+        <!-- FINAL -->
+
+        <div class="final">
+
+            <h2>
+                You + Me = Forever? 🥺❤️
+            </h2>
+
+            <p>
+                If I could choose one person
+                to make millions of memories with,
+                I would still choose you.
+                Every single time. 💕
+            </p>
+
+            <br>
+
+            <p>
+                Happy Anniversary, Bubbu. 🫂❤️
+            </p>
+
+            <br>
+
+            <p>
+                I love you more than these words
+                can ever explain. 💖
+            </p>
+
+        </div>
 
     </div>
 
@@ -317,113 +494,196 @@ button{
 
 <script>
 
-/* NO BUTTON RUNS AWAY */
+/* NO BUTTON */
 
 const noBtn = document.getElementById("noBtn");
 
-function moveNoButton(){
+function moveNo(){
 
-    const box = document.querySelector(".question-box");
-    const boxRect = box.getBoundingClientRect();
+    const x = (Math.random() * 240) - 120;
 
-    const maxX = boxRect.width - noBtn.offsetWidth - 20;
-    const maxY = 100;
-
-    const x = Math.random() * maxX - (maxX / 2);
-    const y = Math.random() * maxY - 20;
+    const y = (Math.random() * 180) - 90;
 
     noBtn.style.transform =
-        `translate(${x}px, ${y}px)`;
+        `translate(${x}px,${y}px)`;
 }
 
-noBtn.addEventListener("mouseenter", moveNoButton);
-noBtn.addEventListener("touchstart", function(e){
-    e.preventDefault();
-    moveNoButton();
-});
+noBtn.addEventListener(
+    "mouseenter",
+    moveNo
+);
+
+noBtn.addEventListener(
+    "touchstart",
+    function(e){
+
+        e.preventDefault();
+
+        moveNo();
+
+    }
+);
 
 
-/* YES CLICK */
+/* YES */
 
-function showLove(){
+function startLove(){
 
-    document.getElementById("home").style.display = "none";
+    document.getElementById("home")
+        .style.display = "none";
 
-    document.getElementById("anniversary").style.display = "block";
+    document.getElementById("anniversary")
+        .style.display = "block";
 
-    document.body.style.overflow = "hidden";
+    window.scrollTo(0,0);
 
-    createHearts();
+    startLoveRain();
 
-    const music = document.getElementById("music");
+    startSparkles();
 
-    music.play().catch(() => {
-        console.log("Music needs user interaction.");
-    });
+    const music =
+        document.getElementById("ourMusic");
+
+    music.play()
+        .then(function(){
+
+            document.getElementById("musicBtn")
+                .innerHTML =
+                "⏸️ Pause Our Song";
+
+        })
+        .catch(function(){
+
+            /* Some browsers block autoplay.
+               User can press Play Our Song. */
+
+        });
 }
 
 
-/* FLOATING LOVE SYMBOLS */
+/* FLYING LOVE */
 
-function createHearts(){
+function startLoveRain(){
 
     const symbols = [
+
         "❤️",
         "💕",
-        "💗",
         "💖",
+        "💗",
+        "💓",
         "💘",
         "💝",
-        "💓",
-        "✨",
         "🥰",
-        "🌸"
+        "😘",
+        "LOVE",
+        "I LOVE YOU",
+        "MY LOVE",
+        "BUBBU ❤️",
+        "FOREVER ❤️"
+
     ];
 
     setInterval(function(){
 
-        const heart = document.createElement("div");
+        const item =
+            document.createElement("div");
 
-        heart.className = "love";
+        item.className =
+            "love-word";
 
-        heart.innerHTML =
-            symbols[Math.floor(Math.random()*symbols.length)];
+        item.innerText =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
 
-        heart.style.left =
-            Math.random()*100 + "vw";
+        item.style.left =
+            Math.random() * 100 + "vw";
 
-        heart.style.fontSize =
-            (18 + Math.random()*30) + "px";
+        item.style.fontSize =
+            (18 + Math.random() * 25) + "px";
 
-        heart.style.animationDuration =
-            (4 + Math.random()*5) + "s";
+        item.style.animationDuration =
+            (5 + Math.random() * 6) + "s";
 
-        document.getElementById("anniversary")
-            .appendChild(heart);
+        document.body.appendChild(item);
 
         setTimeout(function(){
-            heart.remove();
+
+            item.remove();
+
+        },11000);
+
+    },300);
+}
+
+
+/* SPARKLES */
+
+function startSparkles(){
+
+    setInterval(function(){
+
+        const sparkle =
+            document.createElement("div");
+
+        sparkle.className =
+            "sparkle";
+
+        sparkle.innerText =
+            "✨";
+
+        sparkle.style.left =
+            Math.random() * 100 + "vw";
+
+        sparkle.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        sparkle.style.animationDuration =
+            (4 + Math.random() * 5) + "s";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(function(){
+
+            sparkle.remove();
+
         },9000);
 
-    },350);
+    },500);
 }
 
 
 /* MUSIC */
 
-function toggleMusic(){
+function musicControl(){
 
-    const music = document.getElementById("music");
-    const btn = document.querySelector(".music-btn");
+    const music =
+        document.getElementById("ourMusic");
+
+    const button =
+        document.getElementById("musicBtn");
 
     if(music.paused){
+
         music.play();
-        btn.innerHTML = "⏸️ Pause Our Song";
-    }else{
-        music.pause();
-        btn.innerHTML = "🎵 Play Our Song";
+
+        button.innerHTML =
+            "⏸️ Pause Our Song";
+
     }
 
+    else{
+
+        music.pause();
+
+        button.innerHTML =
+            "🎵 Play Our Song";
+
+    }
 }
 
 </script>
